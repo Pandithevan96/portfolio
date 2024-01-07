@@ -1,0 +1,652 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:Roboto;
+    cursor: pointer;
+
+}
+nav{
+    background-color: #D84F57;
+    width:100%;
+    height:65px;
+    overflow:hidden;
+    display: flex;
+    position:fixed;
+    top:0;
+    z-index: 1;
+    
+}
+body{
+    width :100%;
+    height:100vh;
+}
+.logo img{
+    width:120px;
+    margin:0 30px;
+    mix-blend-mode:lighten;
+}
+.endcont{
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    font-size: 0.8em;
+    color:whitesmoke;
+}
+#p1{
+    margin-left: 460px;
+}
+#spn1{
+    margin-left: 3px;
+}
+sup{
+    border: 1px solid whitesmoke;
+    background: #36B077;
+    padding: 1px;
+    margin: -25px 0;
+    font-size: 0.75em;
+
+}
+select{
+    border: none;
+    outline:none;
+    color: whitesmoke;
+    background-color:#D84F57;
+
+    
+}
+option{
+    background-color:#D84F57;
+    text-shadow:0 0 15px rgba(225,225,225,0.7);
+}
+select option:hover{
+    background-color: #D7D7D9;
+}
+#log{
+    width:50px;
+    margin:0 -35px 0 -10px;
+    
+}
+.ad{
+    margin-top:25px;
+    width:100%;
+    height:450px;
+    /* background-image:linear-gradient(to top right,#9FB0BF,#BFAE9F); */
+    background-image: url("https://i.pinimg.com/originals/e5/32/39/e53239fcf1659bb0e2ba951bf9375286.jpg");
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    color: #3E3E52;
+   
+
+}
+#diff{
+    margin: 50px 0;
+    font-family:Dancing Script;
+    color:;
+    text-shadow:0 0 15px rgba(225,225,225,0.7);
+    font-size: 3em;
+    text-align: center;
+}
+input{
+    font-size: 1.2em;
+    padding: 15px 10px 0px 35px;
+    
+ 
+}
+.src{
+    display:flex;
+    border: none;
+    outline: none;
+    font-size: 0.8em;
+    position: relative;
+    box-shadow: 0 0 12px rgba(0,0,0,0.5);
+}
+#btn1{
+    font-size:1.2em;
+    padding:10px 20px;
+    font-weight: bold;
+    color: whitesmoke;
+    background-color: #E9555D;
+    border: none;
+
+}
+.container{
+    
+}
+#inp1{
+ 
+    
+}
+#build{
+    position: absolute;
+    padding: 10px;
+}
+#build2{
+    position: absolute;
+    padding: 10px;
+    left: 25%;
+
+}
+#od{
+position: absolute;
+left: 52%;
+top:8%;
+}
+#rd{
+    position: absolute;
+    left: 71.5%;
+     top:8%;
+}
+#icon1{
+    position: absolute;
+    left: 5%;
+}
+#intch{
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 25%;
+    left: 22.5%;
+    border: 1px solid gainsboro;
+    border-radius: 50%;
+}
+.ad1{
+    background-image:url("http://www.blog.sagmart.com/wp-content/uploads/2013/10/redbus-diwali-offer.jpg");
+
+}
+.qr{
+    background-color: whitesmoke;
+    width: 70%;
+    height:150px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    margin: auto;
+}
+.qr img{
+    margin-left: 800px;
+    margin-top:-75px ;
+}
+h3{
+    font-size: 1.5em;
+    padding: 20px;
+    color: #3E3E52;
+}
+
+.adv{
+    margin-top: 10px;
+    margin-bottom: 10px;;
+    display: flex;
+    justify-content: center;
+    grid-template-columns:repeat(2,300px);
+    background-color: whitesmoke;
+    gap:25px;
+    padding: 10px;
+   
+
+}
+.adv>div{
+    padding: 20px;
+    width: 290px;
+    height: 150px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    background-position: bottom;
+    background-size: 90%;
+    overflow: hidden;
+    transition: 0.5s;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #3E3E52;
+
+}
+.box1{
+    background-image: url("https://s3.rdbuz.com/Images/rB_DEC%2722%20HUB_KV_Offer%20tile-274%20x%20148px.jpg");
+  
+
+}
+.box2{
+    background-image: url("https://s3.rdbuz.com/Images/Desktop-Offer-Page-min%20274x147.png");
+   
+
+    
+}
+.box3{
+    background-image: url("https://s3.rdbuz.com/Images/Buspass274x148.png");
+
+}
+.adv>div:hover{
+transform: scale(1.1);
+
+
+}
+.red{
+    background-color: #D84F57;
+    width:80%;
+    height:220px;
+    margin:auto;
+    background-image: url("https://st.redbus.in/seo/rdc/bus_companies.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#right{
+    position: absolute;
+    width: 300px;
+    height:200px;
+    margin: 30px;
+    animation-name: an;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transition: 1s;
+  
+}
+@keyframes an {
+    from{
+    transform: scale(1);
+
+    }
+    to{
+        transform: scale(1.1);
+    
+    }
+    
+}
+#left{
+    position: absolute;
+    width: 200px;
+    height:150px;
+    margin-left: 850px;;
+    margin-top: 50px;
+    animation-name: anl;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transition: 1s;
+}
+@keyframes anl {
+    from{
+    transform:rotate(0);
+
+    }
+    to{
+        transform: rotate(5deg);
+    
+    }
+}
+
+h2{
+    margin-top: 20px;
+    font-size: 1.8em;
+    text-align: center;
+    color: #3E3E52;
+}
+#scan{
+    margin-left: 30px;
+    color: #3E3E52;
+
+}
+.pcs{
+display:grid;
+grid-template-columns: repeat(5,200px);
+padding: 10px;
+gap:25px;
+/* background-color: whitesmoke; */
+margin-left: 120px;
+}
+.pcs>div{
+    padding: 80px;
+    background-color:transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 1s;
+}
+.pcs>div:hover{
+    background-color: rgba(25,25,25,0.3);
+    
+
+}
+.im1{
+background-image: url("https://s3.rdbuz.com/Images/home/bologos/sea/transnasional_logo.png");
+}
+.im2{
+    background-image: url("https://s3.rdbuz.com/Images/home/bologos/sea/starmart.png");
+}
+.im3{
+    background-image: url("https://s3.rdbuz.com/Images/home/bologos/sea/plusline.png");
+}
+.im4{
+    background-image: url("https://s3.rdbuz.com/Images/home/bologos/sea/Causeway_New.png");
+}
+.im5{
+    background-image: url("https://s3.rdbuz.com/Images/home/bologos/sea/cepat%20ekspress%20%281%29.png");
+}
+.im6{
+    background-image: url("https://st.redbus.in/Images/home/bologos/sea/pancaranlogo.png");
+}
+.im7{
+    background-image: url("");
+}
+.im8{
+    background-image: url("");
+}
+.im9{
+    background-image: url("");
+}
+.im10{
+    background-image: url("");
+}
+.promise {
+    background-color:#EDEDED;
+    margin: 20px;
+    padding: 20px;
+  
+}
+.prbox{
+    width: 90px;
+    height: 105px;
+    background-image: url("https://s1.rdbuz.com/web/images/home/promise.png");
+    background-position: center;
+    background-size: cover;
+    margin: auto;
+  
+}
+
+#prms{
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.8em;
+    color: #3E3E52;
+    margin-bottom: 20px;
+}
+.item-cont{
+    display: flex;
+    margin:10px 30px;
+    color: #3E3E52;
+
+  
+  
+}
+.item-cont>div{
+    background-color:#FFFFFF;
+  margin-right: 4px;
+    padding: 10px;
+    width: 280px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.5);
+  
+}
+.item img{
+    margin: 10px 100px;
+    width: 100px;
+    height: 100px;
+    
+}
+h4{
+   margin-top:40px;
+   text-align: center;
+   color: #3E3E52;
+   margin-bottom: 40px;
+
+}
+.prp{
+    color: #3E3E52;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding: 10px;
+    font-size: 0.9em;
+}
+.mlsy{
+    background-image:linear-gradient(rgba(5,5,15,0.5),rgba(5,5,15,0.5)),url("https://s3.rdbuz.com/web/images/home/sgp/aboutTravel.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height:400px;
+    margin-top: 20px;
+    transition: 1s;
+}
+.mlsy:hover{
+    opacity: 0.9;
+}
+#mal{
+    color: white;
+    font-family:sans-serif;
+    font-weight: normal;
+    padding: 25px;
+    text-align: center;
+}
+#malp,#malp2{
+    margin: 20px 0;
+    text-align: center;
+    padding: 10px;
+    color: whitesmoke;
+}
+.y{
+    display: flex;
+    justify-content: space-around;
+    background-color:#D7D7D9;
+}
+.ycont{
+    padding: 10px;
+    color: #3E3E52;
+}
+#yh{
+    margin: 10px 20px;
+}
+#yp{
+    margin: 20px 0 10px 60px;
+    width: 250px;
+    height: 250px;
+}
+#btn2
+{
+    margin-left: 10px;
+padding: 8px 10px;
+background-color:#E9555D;
+border: none;
+box-shadow: 0 0 12px rgba(0,0,0,0.5);
+color:#EDEDED;
+
+}
+#apple{
+ margin-right: 20px;
+}
+.icon2{
+    margin: 20px;
+    display:flex;
+    
+}
+.global{
+    background-color:#FEFEFE;
+    /* width:100%;
+    height:500px; */
+    padding: 20px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+#gloh{
+    text-align: center;
+    padding: 20px 0;
+    color: #3E3E52;
+}
+.glo-cont{
+    display:grid;
+    grid-template-columns: repeat(3,250px);
+    gap:100px;
+    padding: 10px;
+    margin-left: 140px;;
+}
+.glo-cont>div{
+padding:100px;
+background-position: center;
+background-size: cover;
+width:30px;
+height: 20px;
+
+
+}
+.no1{
+    background-image: url("https://cdn1.iconfinder.com/data/icons/flags-of-the-world-set-2-1/100/.svg-28-512.png");
+}
+.no2{
+ 
+    background-image: url("https://tse4.mm.bing.net/th?id=OIP.zaO9f_KRwAmYk_4bJjAi1gHaHa&pid=Api&P=0&h=180");
+}
+.no2{
+    background-image: url("https://tse2.mm.bing.net/th?id=OIP.Ratr-jWlMtQ-S6T30Ewe3AHaHa&pid=Api&P=0&h=180");
+ 
+}
+.no3{
+    background-image: url("https://tse1.mm.bing.net/th?id=OIP._4cE9NoDHVXeZ62MoD4kfAHaHa&pid=Api&P=0&h=180");
+}
+.no4{
+    background-image: url("https://tse4.mm.bing.net/th?id=OIP.zaO9f_KRwAmYk_4bJjAi1gHaHa&pid=Api&P=0&h=180");
+}
+.no5{
+    background-image: url("https://tse2.mm.bing.net/th?id=OIP.YMSlMU3jRswQcktVoPaR-AHaHa&pid=Api&P=0&h=180");
+}
+.no6{
+    background-image: url("https://tse4.mm.bing.net/th?id=OIP.bGEaCImfpjfSv4tlS80u5QHaHa&pid=Api&P=0&h=180");
+}
+.statis{
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+    margin-top: -20px;;
+}
+#sta{
+    padding: 30px;;
+    margin: 20PX;
+    text-align: center;
+    color: #3E3E52;
+}
+.stat-cont{
+    display:flex;
+    justify-content: center;
+    
+
+}
+.stat-cont>div{
+    width: 380px;
+    height:200px;
+   
+    margin-left: 50px;
+}
+.stap{
+    margin:15px 0;
+    text-align: center;
+    color: #3E3E52;
+    font-size: 1.1em;
+}
+.stah{
+    margin:5px 0;
+    text-align: center;
+    color:#E9555D;
+    font-size: 2.5em;
+    font-weight: normal;
+}
+.stap2{
+    margin:20px 0;
+    text-align: center;
+    color: #3E3E52;
+ 
+}
+.route{
+    display:flex;
+    justify-content: center;
+    background-color: #E5E5E5;
+   
+}
+.route>div{
+    margin: 70px;
+}
+h6{
+    font-size: 1.1em;
+  
+}
+.tp h6{
+    margin: 10px;;
+}
+.tc h6{
+    margin: 10px;
+}
+.tp p{
+    margin: 10px;
+    color: #3E3E52;
+}
+.tc p{
+    margin: 10px;
+    color: #3E3E52;
+}
+.to h6{
+    margin: 10px;
+}
+.to p{
+    margin: 10px;
+    color: #3E3E52;
+}
+.four{
+    background-color: #1B2330;
+    display: flex;
+    color:#D7D7D9;
+    width:100%;
+    height:400px;
+    padding:20px;
+}
+.four>div{
+    margin: 20px;
+    font-size: 0.9em;
+}
+.ab h6{
+    margin: 20px;
+    color: #797979;
+}
+.info h6{
+    margin: 20px;
+    color: #797979;
+}.gs h6{
+    margin: 20px;
+    color: #797979;
+}.op h6{
+    margin: 20px;
+    color: #797979;
+}
+.ab p{
+    margin: 15px 20px;
+}
+.info p{
+    margin: 15px 20px;
+}.gs p{
+    margin: 15px 20px;
+}.op p{
+    margin: 15px 20px;
+}
+.end{
+    position: absolute;
+    margin:20px 0  20px 180px;
+    width: 26%;
+    text-indent:20px;
+    left:65%;
+    line-height: 20px;
+}
+.end p{
+    margin: 20px;
+    padding: 20px;
+}
+#fb{
+   margin: 0 20px;
+    
+}
+footer{
+    overflow: hidden;
+  
+}
+footer p:hover{
+color: #797979;
+}
+footer i:hover{
+    color: #797979;
+    }
+    nav p:hover{
+        color:#3E3E52;
+    }
+    body p:hover{
+        color: #797979;
+    }
