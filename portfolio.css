@@ -14,6 +14,12 @@
       animation: full ease-in forwards;
         
   }
+  body,html{
+    overflow-x: hidden;
+  }
+  ::placeholder{
+    color:whitesmoke;
+  }
   nav a{
     transition: 1s;
   }
