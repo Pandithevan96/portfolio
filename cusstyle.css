@@ -1,0 +1,282 @@
+*{
+    margin:0;
+    padding:0;
+
+}
+body{
+background-image:linear-gradient(rgba(225,225,225,0.75),rgba(0,2,2,0.75)),url("https://t3.ftcdn.net/jpg/02/41/90/28/240_F_241902818_xHSo8HaGT7TL8ZXLienSAnFijqKoc4wQ.jpg");
+
+}
+.banner{
+    width:480px;
+    height: 300px;
+    background-image:url("https://www.pinclipart.com/picdir/big/422-4228187_ps4-controller-clip-art.png");
+    background-position:center;
+    background-size: cover;
+    
+}
+.pgc{
+    width:30px;
+    height: 200px;;
+}
+.sdw{
+    box-shadow:0 0 12px 4px rgba(0, 33, 25,0.7); 
+}
+.bgc{
+
+}  
+.but {
+    background-color: transparent;
+    border: 3px solid #00d7c3;
+    border-radius: 50px;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    color: #00d7c3;
+  }
+  .marb{
+    margin-bottom:200px;
+  }
+  .carousel-item:hover{
+    background-color: rgba(0,0,0,0.7);
+  }
+  .nav-item{
+    transition:0.5s;
+
+  }
+  .nav-item a{
+    position:relative;
+  
+    }
+    .nav-item a::after{
+    content:'';
+    position:absolute;
+    left:10%;
+    bottom:-2px;
+    width:85%;
+    height:3px;
+    border-radius:5px;
+    transform-origin:right;
+    transform:scaleX(0);
+    transition:transform .5s;
+    background-color:rgba(210,39,48,0.7); 
+    
+    
+    }
+  .nav-item a:hover::after{
+    transform-origin:left;
+    transform:scaleX(1);
+    cursor:pointer;
+    
+  }
+  .nav-item p{
+    transition:0.5s;
+  }
+  .nav-item p:hover{
+    cursor:pointer;
+    background-color:rgba(210,39,48,0.7); 
+  }
+  .wfu{
+    width:100%;
+  }
+  .tx{
+    color:whitesmoke;
+    font-size: 1.1em;
+    padding: 20px;
+
+  }
+  footer li a{
+    color:gainsboro;
+    text-decoration: none;
+  }
+  footer li h5{
+    color:white;
+  }
+  .bdf{
+    backdrop-filter:blur(2px);
+  }
+  #bgr{
+    background-image:linear-gradient(rgba(225,225,225,0.75),rgba(0,2,2,0.75)),url("https://s.itl.cat/pngfile/s/326-3267910_playstation-wallpaper-hd.jpg");
+    background-position: center;
+    transition:1s;
+  }
+  #bgr:hover{
+    filter: opacity(80%);
+  }
+  .wd1{
+    width:75%;
+
+  }
+  .wd2{
+    width:90%;
+  }
+  .wd3{
+    width:80%;
+  }
+
+  .lbg{
+    background-image:linear-gradient(rgba(225,225,225,0.75),rgba(0,2,2,0.75)),url("https://wallpapercave.com/wp/wp6623907.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .mr{
+    margin-right: 20px;
+  }
+  .scl{
+  font-size:0.7em;  
+}
+.fsc{
+  font-size:1.2em;
+  color:black;
+}
+option:hover{
+  background-color:rgba (77, 77, 255,0.7);
+
+}
+.bg1{
+  background-image:linear-gradient(rgba(225,225,225,0.75),rgba(0,2,2,0.75)),url("https://i.redd.it/y90ho6dp36t41.jpg");
+}
+.bg2{
+  background-image:linear-gradient(rgba(225,225,225,0.75),rgba(0,2,2,0.75)),url("https://wallpapercave.com/wp/wp8139166.jpg");
+}
+.cr{
+  border-radius:20px;
+}
+.gcard div{
+  transition: 1s;
+}
+.gcard div:hover{
+  transform:scale(1.1);
+}
+.smic img{
+  transition: 1s;
+}
+.smic img:hover{
+  transform:rotatey(180deg)
+}
+.fontc{
+  font-size: 4em;
+}
+#fontsty{
+  font-family: Ephesis;
+  font-size: 1.5em;
+}
+.cirp{
+ 
+  background-color: whitesmoke;
+}
+.sdw2{
+  box-shadow:0 0 12px 4px rgba(217,227,255,0.7); 
+  backdrop-filter:blur(7px);
+  background-position: center;
+  background-size: cover;
+}
+.cati img{
+transition: 1s;
+}
+.cati img:hover{
+transform: rotate(350deg);
+}
+.ts{
+  text-shadow:#00d7c3;
+  background-color:#F2CB05;
+}
+.lkl{
+  width: 100%;
+  height: 650px;
+  overflow: hidden;
+  
+}
+hr{
+  height: 5px;
+}
+.fcv h2{
+  color: #D7D9D8;
+}
+footer a{
+  color:gray;
+}
+footer a:hover{
+color:#BFB39B;
+}
+
+  @media only screen and (max-width:767px) {
+    .navbar-nav{
+      text-align: center;
+    }
+    .nav-item a::after {
+      left:40%;
+      width: 20%;
+      }
+    
+    .nav-item p{
+      text-align: center;
+    }
+  .navbar form .btn{
+    margin:auto;
+  }
+.gcard{
+grid-gap:30px;
+}
+.cused{
+  backdrop-filter:blur(20px);
+  padding:25px;
+  color:black;
+  }
+  #sinp{
+    margin-top:-10px;
+    margin-bottom:-10px;
+  }
+  #fscb{
+    margin-top:10px;    
+    
+  }
+  .bnew{
+    background-image:linear-gradient(rgba(25,225,225,0.75),rgba(0,2,2,0.75)),url("https://tse1.mm.bing.net/th?id=OIP.Qqn7QR66C6wxzw4Wtj-nFwHaHa&pid=Api&P=0&h=180");
+  }
+  #chngew{
+    width: 90%;
+    height:220vh;
+    
+  }
+  #chngnew2{
+    height:120vh;
+  }
+  #lstrb{
+    margin-top: 10px;
+  }
+  #man{
+    border-radius:50%;
+    box-shadow:0 0 12px 4px rgba(0, 33, 25,0.7);
+    background-color: #D7D9D8;
+    
+  }
+}
+  @media only screen and (min-width:768px) and (max-width: 1023px) {
+    .navbar-nav{
+      text-align: center;
+    }
+    .nav-item a::after {
+      left:40%;
+      width: 20%;
+      }
+    
+    .nav-item p{
+      text-align: center;
+    }
+  .navbar form .btn{
+    margin:auto;
+  }
+.gcard{
+grid-gap:30px;
+}
+.cused{
+  backdrop-filter:blur(20px);
+  padding:25px;
+  color:black;
+}
+.fsc ~.btn{
+  margin-top:10px;
+  
+}
+  }
