@@ -236,11 +236,11 @@ grid-gap:30px;
   }
   #chngew{
     width: 90%;
-    height:220vh;
+    min-height:100vh;
     
   }
   #chngnew2{
-    height:120vh;
+    min-height:100vh;
   }
   #lstrb{
     margin-top: 10px;
@@ -249,6 +249,11 @@ grid-gap:30px;
     border-radius:50%;
     box-shadow:0 0 12px 4px rgba(0, 33, 25,0.7);
     background-color: #D7D9D8;
+    width: 320px;
+    height: 320px;
+    display: block;
+    margin: 0 auto;
+   
     
   }
 }
