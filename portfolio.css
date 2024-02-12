@@ -421,26 +421,35 @@
   }
   .b1{
     animation:b1 10s;
+    animation-delay: 5s;
     width: 80%;
    
   }
   .b2{
     animation:b2 10s;
     width: 80%;
+    animation-delay: 5s;
+
   
   }
   .b3{
     animation:b3 10s;
     width: 70%;
+    animation-delay: 5s;
+
   }
   .b4{
     animation:b4 10s;
     width: 85%;
+    animation-delay: 5s;
+
 
   }
   .b5{
     animation:b5 10s;
     width: 70%;
+    animation-delay: 5s;
+
 
   }
   .g1{

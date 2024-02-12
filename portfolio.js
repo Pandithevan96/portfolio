@@ -66,7 +66,7 @@ let showVal=document.querySelectorAll(".num");
 let interval=1000;
 
 
-
+setTimeout(()=>{
 showVal.forEach((val)=>{
 
     let backBar=document.querySelectorAll(".bgbar");
@@ -120,3 +120,4 @@ circularProgress.forEach((cp)=>{
    }
 
  },speed)
+},5000)
