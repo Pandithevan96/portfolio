@@ -76,7 +76,7 @@ showVal.forEach((val)=>{
 
 
 
-    let duration=Math.floor(interval/endVal);
+    // let duration=Math.floor(interval/endVal);
     let counter=setInterval(function (){
         startVal +=1;
         val.textContent=`${startVal}%`;
@@ -84,6 +84,7 @@ showVal.forEach((val)=>{
         //     b.style.width=`${startVal}%`;
   
         // })
+
         if(startVal==endVal){
             clearInterval(counter);
         }
@@ -95,14 +96,12 @@ let circularProgress=document.querySelectorAll(".gradient"),
 progressValue=document.querySelectorAll(".prg-val"),
 speed=100;
  let progressStartValue=0;
- progressEndValue=85;
+ let progressEndValue;
 
-
-// progressValue.forEach((val)=>{
-//     let progressEndValue=val.getAttribute("data-val");
-
- 
- let progress=setInterval(()=>{
+progressValue.forEach((val)=>{
+     progressEndValue=parseInt(val.getAttribute("data-value"));
+});
+ let counter2=setInterval(()=>{
     progressStartValue++;
     progressValue.forEach((pv)=>{
         pv.textContent=`${progressStartValue}%`;
@@ -114,9 +113,10 @@ circularProgress.forEach((cp)=>{
 })
   
 
+console.log(progressEndValue);
 
    if(progressStartValue==progressEndValue){
-    clearInterval(progress);
+    clearInterval(counter2);
    }
 
  },speed)
