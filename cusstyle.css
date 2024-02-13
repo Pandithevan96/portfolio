@@ -235,11 +235,11 @@ grid-gap:30px;
     background-image:linear-gradient(rgba(25,225,225,0.75),rgba(0,2,2,0.75)),url("https://tse1.mm.bing.net/th?id=OIP.Qqn7QR66C6wxzw4Wtj-nFwHaHa&pid=Api&P=0&h=180");
   }
   #chngew{
-    width: 90%;
+    width: 100%;
     min-height:100vh;
     
   }
-  #chngnew2{
+  #chngnew2{  
     min-height:100vh;
   }
   #lstrb{
@@ -249,10 +249,9 @@ grid-gap:30px;
     border-radius:50%;
     box-shadow:0 0 12px 4px rgba(0, 33, 25,0.7);
     background-color: #D7D9D8;
-    width: 320px;
-    height: 320px;
     display: block;
     margin: 0 auto;
+    padding: 0 auto;
    
     
   }
