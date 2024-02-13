@@ -65,7 +65,23 @@ menu.onclick=function(){
 let showVal=document.querySelectorAll(".num");
 let interval=1000;
 
+const container = document.getElementById("skills");
 
+const observer2 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      startAnimation();
+     
+    }
+  });
+});
+
+
+observer2.observe(container);
+
+function startAnimation() {
+//   Your animation code here
+  
 setTimeout(()=>{
 showVal.forEach((val)=>{
 
@@ -90,34 +106,35 @@ showVal.forEach((val)=>{
         }
 
     },100)
-}
+})}
 )
-let circularProgress=document.querySelectorAll(".gradient"),
-progressValue=document.querySelectorAll(".prg-val"),
-speed=100;
- let progressStartValue=0;
- let progressEndValue;
+  setTimeout(() => {
+    showVal.forEach((val) => {
+      // Rest of your code
+    });
 
-progressValue.forEach((val)=>{
-     progressEndValue=parseInt(val.getAttribute("data-value"));
-});
- let counter2=setInterval(()=>{
-    progressStartValue++;
-    progressValue.forEach((pv)=>{
-        pv.textContent=`${progressStartValue}%`;
-    })
-
-
-circularProgress.forEach((cp)=>{
-    cp.style.background=`conic-gradient(#373737 ${progressStartValue*3.6}deg,#ededed 0deg)`;
-})
-  
-
-console.log(progressEndValue);
-
-   if(progressStartValue==progressEndValue){
-    clearInterval(counter2);
-   }
-
- },speed)
-},5000)
+    let circularProgress = document.querySelectorAll(".gradient"),
+      progressValue = document.querySelectorAll(".prg-val"),
+      speed = 100;
+    let progressStartValue = 0;
+    let progressEndValue;
+    progressValue.forEach((val) => {
+      progressEndValue = parseInt(val.getAttribute("data-value"));
+    });
+    let counter2 = setInterval(() => {
+      progressStartValue++;
+      progressValue.forEach((pv) => {
+        pv.textContent = `${progressStartValue}%`;
+      });
+      circularProgress.forEach((cp) => {
+        cp.style.background = `conic-gradient(#373737 ${
+          progressStartValue * 3.6
+        }deg,#ededed 0deg)`;
+      });
+      console.log(progressEndValue);
+      if (progressStartValue == progressEndValue) {
+        clearInterval(counter2);
+      }
+    }, speed);
+  }, );
+}
