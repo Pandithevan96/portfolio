@@ -85,7 +85,6 @@ function startAnimation() {
 setTimeout(()=>{
 showVal.forEach((val)=>{
 
-    let backBar=document.querySelectorAll(".bgbar");
     let startVal=0;
     let endVal=parseInt(val.getAttribute("data-val"));
     let skills=document.getElementById("skills");
@@ -96,10 +95,7 @@ showVal.forEach((val)=>{
     let counter=setInterval(function (){
         startVal +=1;
         val.textContent=`${startVal}%`;
-        // backBar.forEach((b)=>{
-        //     b.style.width=`${startVal}%`;
-  
-        // })
+        
 
         if(startVal==endVal){
             clearInterval(counter);
@@ -108,33 +104,72 @@ showVal.forEach((val)=>{
     },100)
 })}
 )
-  setTimeout(() => {
-    showVal.forEach((val) => {
-      // Rest of your code
-    });
+let backBar=document.querySelectorAll(".bgbar");
 
-    let circularProgress = document.querySelectorAll(".gradient"),
-      progressValue = document.querySelectorAll(".prg-val"),
-      speed = 100;
-    let progressStartValue = 0;
-    let progressEndValue;
-    progressValue.forEach((val) => {
-      progressEndValue = parseInt(val.getAttribute("data-value"));
-    });
-    let counter2 = setInterval(() => {
-      progressStartValue++;
-      progressValue.forEach((pv) => {
-        pv.textContent = `${progressStartValue}%`;
-      });
-      circularProgress.forEach((cp) => {
+backBar.forEach((val)=>{
+  let backBar=document.querySelectorAll(".bgbar");
+  let startVal=0;
+  let endVal=parseInt(val.getAttribute("data-val"));
+  let skills=document.getElementById("skills");
+
+  let counter=setInterval(function (){
+    startVal +=1;
+    val.style.width=`${startVal}%`;
+    
+
+    if(startVal==endVal){
+        clearInterval(counter);
+    }
+
+},100)
+  
+
+})
+//below dubl
+
+let progressValue = document.querySelectorAll(".prg-val");
+
+
+setTimeout(() => {
+  let circularProgress = document.querySelectorAll(".gradient"),
+    speed = 100;
+  
+  progressValue.forEach((val) => {
+   let  progressEndValue = parseInt(val.getAttribute("data-value"));
+   let progressStartValue = 0;
+  
+  let counter2 = setInterval(() => {
+    progressStartValue+=1;
+      val.textContent = `${progressStartValue}%`;
+        if (progressStartValue === progressEndValue) {
+      clearInterval(counter2);
+    }
+      
+    
+
+  }, speed);
+    circularProgress.forEach((cp) => {
+      let  progressEndValue = parseInt(cp.getAttribute("data-value"));
+      let progressStartValue = 0;
+      let counter2 = setInterval(() => {
+        progressStartValue+=1;
         cp.style.background = `conic-gradient(#373737 ${
           progressStartValue * 3.6
         }deg,#ededed 0deg)`;
-      });
-      console.log(progressEndValue);
-      if (progressStartValue == progressEndValue) {
-        clearInterval(counter2);
-      }
-    }, speed);
-  }, );
+            if (progressStartValue === progressEndValue) {
+          clearInterval(counter2);
+        }
+          
+        
+    
+      }, speed);
+      
+      
+    });
+    console.log(progressEndValue);
+    if (progressStartValue == progressEndValue) {
+      clearInterval(counter2);
+    }
+  }, speed);
+}, );
 }

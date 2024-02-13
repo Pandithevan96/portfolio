@@ -419,41 +419,7 @@
     position: absolute;
 
   }
-  .b1{
-    animation:b1 10s;
-    width: 80%;
-   
-  }
-  .b2{
-    animation:b2 10s;
-    width: 80%;
 
-
-  
-  }
-  .b3{
-    animation:b3 10s;
-    width: 70%;
-    
-
-  }
-  .b4{
-    animation:b4 10s;
-    width: 85%;
-    
-
-
-  }
-  .b5{
-    animation:b5 10s;
-    width: 70%;
-    
-
-
-  }
-  .b1 .paused{
-    animation: none;
-  }
   .g1{
     animation:g1 10s;
   background: conic-gradient(#373737 306deg, #ededed 0deg);
