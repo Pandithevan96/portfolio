@@ -22,9 +22,6 @@ background-image:linear-gradient(rgba(225,225,225,0.75),rgba(0,2,2,0.75)),url("h
 .sdw{
     box-shadow:0 0 12px 4px rgba(0, 33, 25,0.7); 
 }
-.bgc{
-
-}  
 .but {
     background-color: transparent;
     border: 3px solid #00d7c3;
@@ -200,7 +197,7 @@ footer a:hover{
 color:#BFB39B;
 }
 
-  @media only screen and (max-width:767px) {
+  @media only screen and (max-width:768px) {
     .navbar-nav{
       text-align: center;
     }
@@ -214,6 +211,12 @@ color:#BFB39B;
     }
   .navbar form .btn{
     margin:auto;
+  }
+  .fix1{
+    text-align: center;
+  }
+  .fix2{
+    justify-content: center;
   }
 .gcard{
 grid-gap:30px;
@@ -252,8 +255,9 @@ grid-gap:30px;
     display: block;
     margin: 0 auto;
     padding: 0 auto;
-   
-    
+  }
+  .widsize{
+    width: 90% !important;;
   }
 }
   @media only screen and (min-width:768px) and (max-width: 1023px) {
