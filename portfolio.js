@@ -145,7 +145,7 @@ setTimeout(() => {
       clearInterval(counter2);
     }
       
-    
+
 
   }, speed);
     circularProgress.forEach((cp) => {
@@ -159,9 +159,6 @@ setTimeout(() => {
             if (progressStartValue === progressEndValue) {
           clearInterval(counter2);
         }
-          
-        
-    
       }, speed);
       
       
