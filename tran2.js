@@ -1,7 +1,14 @@
 
    var boxOverlay=document.querySelector(".container-overlay");
     var box=document.querySelector(".content");
-    var addButton = document.getElementById("plus")
+    var addButton = document.getElementById("plus");
+    let todos='';
+    window.onload=()=>{
+        // localStorage.JSON.parse(localStorage.getItem('todos')) || [];
+        console.log("iru");
+        // todos.push(outer)
+        console.log(div);
+    }
     addButton.addEventListener("click",function()
     {
         boxOverlay.style.visibility="visible";
@@ -29,12 +36,15 @@ addContent.addEventListener("click",function(event){
 
  event.preventDefault()
  var div=document.createElement("div")
+
  div.setAttribute("class","quotebox")
  div.innerHTML=`<h2>${category.value}</h2>
 <h3>${h3.value}</h3>
 <p>${para.value}</p>
-<button id="del" onclick="del(event)">Delete</button>`
+<i class="fa fa-trash fx-2" aria-hidden="true" id="del" onclick="del(event)"></i>`
   outer.append(div)
+ localStorage.setItem('todos',JSON.stringify(todos))
+
   boxOverlay.style.visibility="hidden";
   box.style.visibility="hidden";
 
