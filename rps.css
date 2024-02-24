@@ -23,23 +23,7 @@
 .top #second{
     animation:shake2 4s linear infinite; 
 }
-@keyframes shake {
-    0%,20%,40%,60%,80%,100%{
-        transform:rotate(0deg);
-    }
-    10%,30%,50%,70%,90%{
-        transform:rotate(15deg);
-    }
-}
-@keyframes shake2 {
-    0%,20%,40%,60%,80%,100%{
-        transform:rotate(0deg);
-    }
-    10%,30%,50%,70%,90%{
-        transform:rotate(-15deg);
-    }
-    
-}
+
 .sdw{
     box-shadow:0 0 10px 6px rgba(0,0,0,0.5);
     background:#F2F3D9;
