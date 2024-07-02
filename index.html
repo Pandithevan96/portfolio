@@ -11,16 +11,19 @@
 </head>
 <body>
   
-    <nav class="navbar navbar-expand-lg navbar-dark"  id="home">
-    <div class="container-fluid ">
+  <nav class="navbar navbar-expand-lg navbar-dark" id="home">
+    <div class="container-fluid">
       <a class="navbar-brand fw-bold" href="#"><span class="fs-2 text-secondary">P</span>ortfolio</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <div class="navbar-toggler-icon " id="menu">
-          <span class="lines-1"></span>
-          <span class="lines-2"></span>
-          <span class="lines-3"></span>
-        </div>
+  
+      <!-- Font Awesome Icon for Toggler -->
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="modal" data-bs-target="#mobileMenuModal">
+        <span class="fa fa-bars text-white"></span> <!-- Font Awesome menu icon -->
       </button>
+  
+      <button class="navbar-toggler d-none d-lg-block" type="button" data-bs-toggle="modal" data-bs-target="#mobileMenuModal">
+        <span class="fa fa-bars text-white"></span> <!-- Font Awesome menu icon -->
+      </button>
+  
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mx-3 fw-semibold">
           <li class="nav-item mx-2">
@@ -38,7 +41,6 @@
           <li class="nav-item mx-2">
             <a class="nav-link" href="#projects" tabindex="-1" aria-disabled="true">Projects</a>
           </li>
-          </li>
           <li class="nav-item mx-2">
             <a class="nav-link" href="#contact" tabindex="-1" aria-disabled="true">Contact</a>
           </li>
@@ -46,6 +48,57 @@
       </div>
     </div>
   </nav>
+  
+  <!-- Customized Modal -->
+  <div class="modal fade" id="mobileMenuModal" tabindex="-1" aria-labelledby="mobileMenuModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title" id="mobileMenuModalLabel">Menu</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="nav flex-column cusmod">
+            <li class="nav-item">
+              <a class="nav-link active text-dark" aria-current="page" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.querySelectorAll('#mobileMenuModal .nav-link').forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent default anchor click behavior
+        const target = this.getAttribute('href');
+        const modal = bootstrap.Modal.getInstance(document.getElementById('mobileMenuModal'));
+        modal.hide();
+        // Wait for the modal to close before scrolling
+        modal._element.addEventListener('hidden.bs.modal', () => {
+          document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+        }, { once: true });
+      });
+    });
+  </script>
+  
+  
     <div class="container-fluid d-lg-flex d-md-flex justify-content-lg-around  justify-content-md-around  mt-4 scroll-scale medq">
         <div class="my-auto w ">
         <h1 id="h1top">hi, I'm <span id="pandi" class=".pandi">Pandithevan</span>
@@ -112,7 +165,7 @@
 
 <div class="liquid">
   <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500px" id="blobSvg">
-    <path  fill="#6D889E">
+    <path  fill="#F29F05">
       <animate attributename="d"
       dur="20000ms"
       repeatCount="indefinite"
@@ -191,6 +244,8 @@
 <img src="https://icon-library.com/images/html5-icon-png/html5-icon-png-1.jpg" alt=""  class="col-6 m-auto scroll-flipx object-fit-cover">
 <img src="https://seeklogo.com/images/B/bootstrap-5-logo-85A1F11F4F-seeklogo.com.png" alt=""  class="col-3 m=auto scroll-flipy object-fit-cover">
 <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-256.png" alt=""  class="col-2  m-auto scroll-flipy object-fit-cover">
+<img src="https://pngimg.com/uploads/php/php_PNG23.png" alt=""  class="col-2  m-auto scroll-flipy object-fit-cover">
+<img src="https://logospng.org/download/laravel/logo-laravel-icon-1024.png" alt=""  class="col-2  m-auto scroll-flipy object-fit-cover">
     </div>
     <div class="container p-3 scroll-open">
       <div class="mx-auto">
@@ -216,7 +271,15 @@
           <div class="conatiner mt-4">
             <h3>REACT JS</h3>
           <div class="progress mt-1" style="height:30px">
-            <div class="progress-bar bgbar b5 bg-info" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" data-val="75" 0"><span class="num" data-val="70"></span ></div></div></div>
+            <div class="progress-bar bgbar b5 bg-info" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" data-val="75" 0"><span class="num" data-val="75"></span ></div></div></div>
+              <div class="conatiner mt-4">
+                <h3>PHP</h3>
+              <div class="progress mt-1" style="height:30px">
+                <div class="progress-bar bgbar b4  bg-primary" role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" data-val="75"><span class="num" data-val="75"></span ></div></div></div>
+                  <div class="conatiner mt-4">
+                    <h3>LARAVEL</h3>
+                  <div class="progress mt-1" style="height:30px">
+                    <div class="progress-bar bgbar b4  bg-danger" role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" data-val="75"><span class="num" data-val="75"></span ></div></div></div>
           </div>
           <div class="conatiner row mt-4 text-center p-4">
             <h2>Professional Skills</h2>
@@ -269,10 +332,10 @@
   <div class="col-4 mx-auto my-3 text-center sdwh p-4 cm scroll-zoom "><img src="https://cdn3.iconfinder.com/data/icons/objects/512/Mechanical-512.png" width="100">
     <h3 class="">Mechanical CAD</h3>
   <p class="text-dark">2D & 3D CAD software to visualise the finished product, as well as its subsystems and fundamental properties, with the goal of increasing productivity and design quality.</p></div>
-  <div class="col-4 mx-auto my-3  text-center sdwh p-4 cm scroll-zoom "><img src="https://freelogopng.com/images/all_img/1656735665canva-black-icon.png" width="100">
-    <h3>Canva Designs</h3>
-  <p class="text-dark">As a passionate and seasoned graphic designer with a flair for creativity and a knack for storytelling, I specialize in leveraging the power of Canva to craft visually stunning and impactful designs.</p></div>
-
+  <div class="col-4 mx-auto my-3  text-center sdwh p-4 cm scroll-zoom "><img src="https://icon-library.com/images/illustrator-icon-png/illustrator-icon-png-12.jpg" width="100">
+    <h3>Adobe Illustrator</h3>
+    <p class="text-dark">As a passionate and seasoned graphic designer with a flair for creativity and a knack for storytelling, I specialize in leveraging the power of Adobe Illustrator with intermediate skills to craft visually stunning and impactful designs.</p>
+    
 
   </div></div>
 

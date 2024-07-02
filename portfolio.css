@@ -8,7 +8,7 @@
   body{
     width:100%;
     height:100%;
-    background-image:linear-gradient(to top right ,#0A0908,#6D889E);
+    background-image:linear-gradient(to top right ,#110F12,#504A4A);
       background-size: cover;
       background-repeat: no-repeat;
       animation: full ease-in forwards;
@@ -121,6 +121,7 @@
     height: 30px; 
     position: relative;
     background-image:none;
+    
   
   }
   .navbar-toggler-icon span{
@@ -223,12 +224,13 @@
     margin-top:150px;
   }
   .icons{
-    color: #6D889E;
+    color: #739BA5;
   }
   .icons a{
-    color: #6D889E;
+    color: #739BA5;
     
   }
+  
   .sdw{
     box-shadow: 0 0 12px -4px rgba(0,0,0,0.5);
   }
@@ -403,7 +405,7 @@
     border-bottom:2x solid;
   } 
   .bgbar{
-    background-color:#6D889E;
+    background-color:#F29F05;
   }
   .circle{
     width:100px;
@@ -545,7 +547,7 @@
   }
   .pt{
   transition: 2s;
-  filter: drop-shadow(-8px 25px 30px  rgba(155,225,225,0.75));
+  filter: drop-shadow(-4px 25px 25px  rgba(155,225,225,0.75));
         
   }
   .w{
@@ -574,20 +576,14 @@
     width: 350px;
   }
   @media screen and (max-width:768px){
-    body{
-      background-image:linear-gradient(#56666B,#39393A);
-    }
+    
     .textpro{
-      color: #262626 !important;;
+      color: #5C636A !important;;
     }
     .w{
       width: 100%;
     }
-    .pt{
-      background-color:#5C636A;
-      margin:auto;
-      filter:none; 
-    }
+   
     .btn1st{
       padding:10px;
       margin-bottom: -100px;
@@ -611,7 +607,11 @@
       text-align: center;
     }
     .liquid{
-      display: none;
+      left: -18%;
+      top: 12%;
+    transform: scale(.7);
+
+     
     }
     #about,#education,#skills,#services,#projects{
       text-align: center;
@@ -639,9 +639,7 @@
   }
   }
   @media only screen and (min-width:768px) and (max-width: 1023px) {
-    body{
-      background-image:linear-gradient(#04030F,#D8A48F);
-    }
+   
     .w{
       width: 50%;
     }
@@ -650,7 +648,7 @@
       
     }
     .pt{
-      background-color:#5C636A;
+      background-color:#F28705  ;
       filter:none;
     }
     .navbar-nav{

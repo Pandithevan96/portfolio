@@ -1,172 +1,120 @@
-// windows.onscroll=()=>{
-//     let header =document.querySelector("nav");
-//     header.classList.toggle('sti',windows.screenY>100);
-// };
-
-const observer= new IntersectionObserver((entries)=>{
-    entries.forEach((entry)=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add("show-items");
-            
-        }
-        else{
-            entry.target.classList.remove("show-items");
-        }
-        })
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show-items");
+      } else {
+        entry.target.classList.remove("show-items");
+      }
     });
-    const scrollScale=document.querySelectorAll(".scroll-scale");
-    scrollScale.forEach((el)=>observer.observe(el));
-
-    const scrollBottom=document.querySelectorAll(".scroll-bottom");
-    scrollBottom.forEach((el)=>observer.observe(el));
-
-    const scrollLeft=document.querySelectorAll(".scroll-left");
-    scrollLeft.forEach((el)=>observer.observe(el));
-
-    const scrollRight=document.querySelectorAll(".scroll-right");
-    scrollRight.forEach((el)=>observer.observe(el));
-
-    const scrollFlipY=document.querySelectorAll(".scroll-flipy");
-    scrollFlipY.forEach((el)=>observer.observe(el));
-
-    const scrollFlipX=document.querySelectorAll(".scroll-flipx");
-    scrollFlipX.forEach((el)=>observer.observe(el));
-
-    const scrollAn=document.querySelectorAll(".scroll-an");
-    scrollAn.forEach((el)=>observer.observe(el));
-
-    const scrollZoom=document.querySelectorAll(".scroll-zoom");
-    scrollZoom.forEach((el)=>observer.observe(el));
-
-    const scrollRotx=document.querySelectorAll(".scroll-rotx");
-    scrollRotx.forEach((el)=>observer.observe(el));
-
-    const scrollRoty=document.querySelectorAll(".scroll-roty");
-    scrollRoty.forEach((el)=>observer.observe(el));
-
-    const scrollClose=document.querySelectorAll(".scroll-close");
-    scrollClose.forEach((el)=>observer.observe(el));
-
-    const scrollOpen=document.querySelectorAll(".scroll-open");
-    scrollOpen.forEach((el)=>observer.observe(el));
-
-    const scrollPrg=document.querySelectorAll(".b");
-    scrollPrg.forEach((el)=>observer.observe(el));
-
-
-
-
-var menu=document.getElementById("menu");
-
-menu.onclick=function(){
-    menu.classList.toggle("openmenu");
-}
-
-let showVal=document.querySelectorAll(".num");
-let interval=1000;
-
-const container = document.getElementById("skills");
-
-const observer2 = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      startAnimation();
-     
-    }
   });
-});
 
+  const elementsToObserve = [
+    ".scroll-scale",
+    ".scroll-bottom",
+    ".scroll-left",
+    ".scroll-right",
+    ".scroll-flipy",
+    ".scroll-flipx",
+    ".scroll-an",
+    ".scroll-zoom",
+    ".scroll-rotx",
+    ".scroll-roty",
+    ".scroll-close",
+    ".scroll-open",
+    ".b"
+  ];
 
-observer2.observe(container);
+  elementsToObserve.forEach((selector) => {
+    document.querySelectorAll(selector).forEach((el) => observer.observe(el));
+  });
 
-function startAnimation() {
-//   Your animation code here
-  
-setTimeout(()=>{
-showVal.forEach((val)=>{
+  const menu = document.getElementById("menu");
+  if (menu) {
+    menu.onclick = function() {
+      menu.classList.toggle("openmenu");
+    };
+  }
 
-    let startVal=0;
-    let endVal=parseInt(val.getAttribute("data-val"));
-    let skills=document.getElementById("skills");
-
-
-
-    // let duration=Math.floor(interval/endVal);
-    let counter=setInterval(function (){
-        startVal +=1;
-        val.textContent=`${startVal}%`;
-        
-
-        if(startVal==endVal){
-            clearInterval(counter);
+  const container = document.getElementById("skills");
+  if (container) {
+    const observer2 = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startAnimation();
         }
-
-    },100)
-})}
-)
-let backBar=document.querySelectorAll(".bgbar");
-
-backBar.forEach((val)=>{
-  let backBar=document.querySelectorAll(".bgbar");
-  let startVal=0;
-  let endVal=parseInt(val.getAttribute("data-val"));
-  let skills=document.getElementById("skills");
-
-  let counter=setInterval(function (){
-    startVal +=1;
-    val.style.width=`${startVal}%`;
-    
-
-    if(startVal==endVal){
-        clearInterval(counter);
-    }
-
-},100)
-  
-
-})
-//below dubl
-
-let progressValue = document.querySelectorAll(".prg-val");
-
-
-setTimeout(() => {
-  let circularProgress = document.querySelectorAll(".gradient"),
-    speed = 100;
-  
-  progressValue.forEach((val) => {
-   let  progressEndValue = parseInt(val.getAttribute("data-value"));
-   let progressStartValue = 0;
-  
-  let counter2 = setInterval(() => {
-    progressStartValue+=1;
-      val.textContent = `${progressStartValue}%`;
-        if (progressStartValue === progressEndValue) {
-      clearInterval(counter2);
-    }
-      
-
-
-  }, speed);
-    circularProgress.forEach((cp) => {
-      let  progressEndValue = parseInt(cp.getAttribute("data-value"));
-      let progressStartValue = 0;
-      let counter2 = setInterval(() => {
-        progressStartValue+=1;
-        cp.style.background = `conic-gradient(#373737 ${
-          progressStartValue * 3.6
-        }deg,#ededed 0deg)`;
-            if (progressStartValue === progressEndValue) {
-          clearInterval(counter2);
-        }
-      }, speed);
-      
-      
+      });
     });
-    console.log(progressEndValue);
-    if (progressStartValue == progressEndValue) {
-      clearInterval(counter2);
-    }
-  }, speed);
-}, );
-}
+
+    observer2.observe(container);
+  }
+
+  function startAnimation() {
+    const showVal = document.querySelectorAll(".num");
+    const interval = 1000;
+
+    setTimeout(() => {
+      showVal.forEach((val) => {
+        let startVal = 0;
+        let endVal = parseInt(val.getAttribute("data-val"));
+
+        let counter = setInterval(function() {
+          startVal += 1;
+          val.textContent = `${startVal}%`;
+
+          if (startVal === endVal) {
+            clearInterval(counter);
+          }
+        }, 100);
+      });
+
+      let backBar = document.querySelectorAll(".bgbar");
+      backBar.forEach((val) => {
+        let startVal = 0;
+        let endVal = parseInt(val.getAttribute("data-val"));
+
+        let counter = setInterval(function() {
+          startVal += 1;
+          val.style.width = `${startVal}%`;
+
+          if (startVal === endVal) {
+            clearInterval(counter);
+          }
+        }, 100);
+      });
+
+      let progressValue = document.querySelectorAll(".prg-val");
+
+      let circularProgress = document.querySelectorAll(".gradient"),
+        speed = 100;
+
+      progressValue.forEach((val) => {
+        let progressEndValue = parseInt(val.getAttribute("data-value"));
+        let progressStartValue = 0;
+
+        let counter2 = setInterval(() => {
+          progressStartValue += 1;
+          val.textContent = `${progressStartValue}%`;
+
+          if (progressStartValue === progressEndValue) {
+            clearInterval(counter2);
+          }
+        }, speed);
+
+        circularProgress.forEach((cp) => {
+          let progressEndValue = parseInt(cp.getAttribute("data-value"));
+          let progressStartValue = 0;
+
+          let counter3 = setInterval(() => {
+            progressStartValue += 1;
+            cp.style.background = `conic-gradient(#373737 ${progressStartValue * 3.6}deg, #ededed 0deg)`;
+
+            if (progressStartValue === progressEndValue) {
+              clearInterval(counter3);
+            }
+          }, speed);
+        });
+      });
+    }, interval);
+  }
+});
