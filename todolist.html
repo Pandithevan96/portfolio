@@ -6,52 +6,47 @@
     <title>transition2</title>
     <link rel="stylesheet" href="tran2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Allura&family=Autour+One&family=Cinzel&family=Farro&family=Fredericka+the+Great&family=Graduate&family=Grenze+Gotisch:wght@100;300&family=Imprima&family=Josefin+Sans:ital,wght@0,400;1,300;1,400&family=Lobster&family=Pacifico&family=Pirata+One&family=Playpen+Sans&family=Roboto&family=Teko&family=Tilt+Neon&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Autour+One&family=Cinzel&family=Farro&family=Fredericka+the+Great&family=Graduate&family=Grenze+Gotisch:wght@100;300&family=Imprima&family=Josefin+Sans:ital,wght@0,400;1,300;1,400&family=Lobster&family=Pacifico&family=Pirata+One&family=Playpen+Sans&family=Roboto&family=Teko&family=Tilt+Neon&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>    
     <div class="nav">
-              <h1 id="frsth"> Status Maker </h1> 
-
+        <h1 id="frsth"> Status Maker </h1> 
     </div>
     
     <h2 id="intro">Welcome to Status Maker</h2>
     <div class="outer">
-    <div class="quotebox">
-        <h2 id="outh2">steve rio</h2>
-        <h3 id="outh3">I'm going for a picnic now</h3>
-        <p id="outp">Lorem ipsum dolor sit amet consectetur adipisicing eli architecto aliquam, praesentium natus eligendi ducimus laudantium dolorem laborum corrupti pariatur provident eius, distinctio maxime voluptates officia nihil aut.</p>
-        <i class="fa fa-trash fx-2" aria-hidden="true" id="del" onclick="del(event)"></i>
-    </div></div>
-   
-
-
+        <div class="quotebox">
+            <h2 id="outh2">Steve Rio</h2>
+            <h3 id="outh3">I'm going for a picnic now</h3>
+            <p id="outp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aliquam, praesentium natus eligendi ducimus laudantium dolorem laborum corrupti pariatur provident eius, distinctio maxime voluptates officia nihil aut.</p>
+            <i class="fa fa-pencil-alt fx-2 edit-icon" aria-hidden="true" onclick="edit(event)"></i>
+            <i class="fa fa-trash fx-2" aria-hidden="true" onclick="del(event)"></i>
+        </div>
+    </div>
   
-    <div class="container-overlay">
-</div>
+    <div class="container-overlay"></div>
 
-<div class="container">
-      
-    <div class="content">
-<form>
-<h2>Add Status</h2>
-<div class="cnt">
-<input type="text" id="cname" placeholder="Name"></div>
-
-<div class="cnt">
-<input type="text" id="aname" placeholder="Status Title"></div>
-<div class="cnt">
-<textarea type="text" id="book-desc" placeholder="Type Your Status"></textarea></div>
-<button id="add">ADD</button>
-<button id="cancel" >CANCEL</button></form></div> 
-<button type="text" id="plus"> + </button>
-
-</div>
-    
-</div>
-
-    
+    <div class="container">  
+        <div class="content">
+            <form>
+                <h2>Add Status</h2>
+                <div class="cnt">
+                    <input type="text" id="cname" placeholder="Name">
+                </div>
+                <div class="cnt">
+                    <input type="text" id="aname" placeholder="Status Title">
+                </div>
+                <div class="cnt">
+                    <textarea type="text" id="book-desc" placeholder="Type Your Status"></textarea>
+                </div>
+                <button id="add">ADD</button>
+                <button id="cancel">CANCEL</button>
+            </form>
+        </div> 
+        <button type="button" id="plus"> + </button>
+    </div>
     
     <script src="tran2.js"></script>
 </body>

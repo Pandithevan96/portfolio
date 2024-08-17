@@ -107,6 +107,15 @@
         transition: transform 0.8s;
         display: block;
       }
+      .image7{
+        width: 100%;
+        height:100%;
+        background-image: url("chat.PNG");
+        background-position: center;
+        background-size: cover; 
+        transition: transform 0.8s;
+        display: block;
+      }
   .cusimgback {
     position: absolute;
     width:100%;
