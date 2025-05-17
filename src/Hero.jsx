@@ -90,7 +90,6 @@ const Hero = () => {
                 
                 <motion.div
                   className="typewriter text-2xl lg:text-4xl font-mono text-gray-300"
-                  initial={{ width: 0 }}
                   animate={{ width: "100%" }}
                   transition={{ duration: 2, ease: "easeInOut" }}
                 >

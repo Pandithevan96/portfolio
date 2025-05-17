@@ -1,64 +1,173 @@
-import {
-    Close,
-    Menu
-} from "@mui/icons-material";
-import {
-    Box,
-    Drawer,
-    IconButton,
-    List,
-    ListItem,
-    Typography
-} from "@mui/material";
-import { keyframes } from "@mui/system";
 import { useState } from "react";
+import { Close, Menu } from "@mui/icons-material";
+import { Box, Drawer, IconButton, List, ListItem, Typography } from "@mui/material";
+import { keyframes } from "@mui/system";
+import { motion, AnimatePresence } from "framer-motion";
+
 const fadeIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 `;
-const navItems = [
-  "Home",
-  "About",
-  "Education",
-  "Skills",
-  "Projects",
-  "Contact",
-];
+
+const navItems = ["Home", "About", "Education", "Skills", "Projects", "Contact"];
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(false);
 
-  // Add this function
   const handleNavClick = (sectionName) => {
-    // Close mobile menu
     setOpen(false);
+    setShowOverlay(true);
     
-    // Convert section name to ID selector
-    const sectionId = `#${sectionName.toLowerCase()}`;
-    
-    // Smooth scroll implementation
-    const section = document.querySelector(sectionId);
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+    setTimeout(() => {
+      const sectionId = `#${sectionName.toLowerCase()}`;
+      const section = document.querySelector(sectionId);
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+        window.history.pushState({}, "", sectionId);
+      }
       
-      // Update URL hash without jumping
-      window.history.pushState({}, "", sectionId);
-    }
+      setTimeout(() => setShowOverlay(false), 800);
+    }, 150);
   };
 
   const toggleDrawer = () => setOpen(!open);
+
   return (
     <div>
+      {/* PD Overlay - Added this component */}
+<AnimatePresence>
+  {showOverlay && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.1 }}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 9999,
+        pointerEvents: "none",
+        backgroundColor: "rgba(18, 18, 18, 0.95)",
+        backdropFilter: "blur(12px)"
+      }}
+    >
+      {/* Container for all animations */}
+      <motion.div
+        style={{
+          position: "relative",
+          width: "200px",
+          height: "200px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center"
+        }}
+      >
+        {/* 1. Square box animation first */}
+        <motion.div
+          initial={{ 
+            opacity: 0,
+            scale: 0.5,
+            borderRadius: "50%"
+          }}
+          animate={{ 
+            opacity: 1,
+            scale: 1,
+            rotate: 0,
+            borderRadius: "10%",
+            transition: {
+              duration: 0.4,
+              ease: "easeInOut"
+            }
+          }}
+          exit={{ 
+            opacity: 0,
+            borderRadius: "50%",
+            transition: { duration: 0.8 }
+          }}
+          style={{
+            position: "absolute",
+            width: "120px",
+            height: "120px",
+            border: "3px solid #F2B705",
+            boxShadow: "0 0 20px rgba(242, 183, 5, 0.5)"
+          }}
+        />
+
+        {/* 2. PD text animation after square */}
+        <motion.div
+          style={{
+            fontSize: "4rem",
+            fontWeight: 900,
+            background: "linear-gradient(45deg, #F2B705, #BF2C38)",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            color: "transparent",
+            position: "relative",
+            opacity: 0 // Start hidden
+          }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ 
+            opacity: 1,
+            y: 0,
+            transition: { 
+              duration: 0.1 
+            }
+          }}
+        >
+          PT
+        </motion.div>
+
+        {/* 3. Dots animation one by one after PD appears */}
+        <motion.div
+          style={{
+            position: "absolute",
+            bottom: "-30px",
+            display: "flex",
+            gap: "8px"
+          }}
+        >
+          {[1, 2, 3].map((dot) => (
+            <motion.div
+              key={dot}
+              initial={{ 
+                opacity: 0,
+                scale: 0.5
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                transition: {
+                  delay: 0.2 + (dot * 0.2), // Staggered appearance after PD
+                  duration: 0.4
+                }
+              }}
+              style={{
+                width: "8px",
+                height: "8px",
+                borderRadius: "50%",
+                background: "#F2B705"
+              }}
+            />
+          ))}
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
+      {/* Your existing code below - completely preserved */}
       <Box>
-        {/* Mobile/Tablet Menu - Enhanced with Glass Morphism and Animations */}
+        {/* Mobile/Tablet Menu - unchanged */}
         <div className="flex justify-end md:hidden">
           <IconButton
             onClick={toggleDrawer}
@@ -151,14 +260,7 @@ const Navbar = () => {
                   zIndex: 10,
                 }}
               >
-                {[
-                  "Home",
-                  "About",
-                  "Education",
-                  "Skills",
-                  "Projects",
-                  "Contact",
-                ].map((text, index) => (
+                {navItems.map((text, index) => (
                   <ListItem
                     key={text}
                     sx={{
@@ -226,13 +328,13 @@ const Navbar = () => {
           </Drawer>
         </div>
 
-        {/* Desktop Navigation - Modern Gradient Design */}
+        {/* Desktop Navigation - unchanged */}
         <Box
           sx={{
             display: { xs: "none", md: "flex" },
             justifyContent: "space-between",
             alignItems: "center",
-            padding: { md: "20px 40px", lg: "20px 80px" },
+            padding: { md: "10px 40px", lg: "10px 80px" },
             position: "fixed",
             top: 20,
             left: "50%",
