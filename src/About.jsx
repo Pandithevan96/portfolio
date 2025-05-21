@@ -59,8 +59,9 @@ const About = () => {
                 ].map((text, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ y: 20 }}
+                    whileInView={{  y: 0 }}
+                    viewport={{ once: true }}
                     transition={{ delay: index * 0.2 }}
                     className="p-6 bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 hover:bg-white/10 transition-all"
                   >

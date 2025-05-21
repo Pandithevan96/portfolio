@@ -1,19 +1,11 @@
-import {
-  motion,
-  useScroll,
-  useTransform
-} from "framer-motion";
 import { useRef, useState } from "react";
-
-import { keyframes } from "@mui/system";
 import TechnologySkills from "./TechSkills";
-
 import {
   KeyboardArrowUp,
   Link,
   LinkedIn,
   Mail,
-  WhatsApp
+  WhatsApp,
 } from "@mui/icons-material";
 import { SpeedDial, SpeedDialAction } from "@mui/material";
 import About from "./About";
@@ -22,41 +14,16 @@ import Hero from "./Hero";
 import Navbar from "./Navbar";
 import Projects from "./Projects";
 import SkillProgressContainer from "./SkillProgress";
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-const slideIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-`;
 
 const Body = () => {
-  const [expanded, setExpanded] = useState(false);
-  const sectionRefs = useRef([]);
-  const { scrollYProgress } = useScroll();
-  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1.2]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, 10]);
-  // Smooth scroll to top
+
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
+
   const actions = [
     {
       icon: <WhatsApp />,
@@ -77,13 +44,19 @@ const Body = () => {
 
   return (
     <div className="relative overflow-hidden">
-    <KeyboardArrowUp
-      fontSize="large"
-      color="warning"
-      className="fixed right-7 bottom-20 border border-amber-600 z-20 cursor-pointer"
-      onClick={handleScrollToTop}
-    />
+      {/* Scroll to top button */}
+      <div className="fixed right-7 bottom-20 z-20 cursor-pointer">
+        <KeyboardArrowUp
+          fontSize="large"
+          color="warning"
+          className="border border-amber-600 rounded-full"
+          onClick={handleScrollToTop}
+        />
+      </div>
+
       <Navbar />
+
+      {/* Speed Dial */}
       <SpeedDial
         ariaLabel="SpeedDial example"
         sx={{
@@ -91,16 +64,10 @@ const Body = () => {
           bottom: 16,
           right: 16,
           "& .MuiSpeedDial-fab": {
-  backgroundImage: "linear-gradient(90deg, rgba(242,183,5,0.9), rgba(191,44,56,0.9), rgba(242,183,5,0.9))",
-  backgroundSize: "200% auto",
-  animation: "gradient-shine 2s linear infinite",
-  color: "#fff",
-  transition: "background-image 0.3s ease-in-out",
-  "&:hover": {
-    backgroundImage: "linear-gradient(90deg, rgba(242,183,5,1), rgba(191,44,56,1), rgba(242,183,5,1))",
-  },
-},
-
+            backgroundImage:
+              "linear-gradient(90deg, rgba(242,183,5,0.9), rgba(191,44,56,0.9), rgba(242,183,5,0.9))",
+            color: "#fff",
+          },
         }}
         icon={<Link sx={{ color: "white" }} />}
         direction="left"
@@ -119,43 +86,29 @@ const Body = () => {
           />
         ))}
       </SpeedDial>
-      {" "}
-      <motion.div
-        style={{ scale, rotate }}
-        className="fixed inset-0 -z-10 opacity-20"
-      >
-        <div id="torus-container" />
-      </motion.div>
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8  ">
-        <Hero />
 
+      {/* Background container */}
+      <div className="fixed inset-0 -z-10 opacity-20">
+        <div id="torus-container" />
+      </div>
+
+      {/* Main content */}
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <Hero />
         <About />
-        <SkillProgressContainer/>
-        <TechnologySkills/>
+        <SkillProgressContainer />
+        <TechnologySkills />
         <Projects />
       </main>
-      {/* Add floating particles */}
+
+      {/* Particles */}
       <div className="particles-container">
-        {[...Array(50)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="particle"
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: [0, 1, 0],
-              x: Math.random() * 100 - 50,
-              y: Math.random() * 100 - 50,
-            }}
-            transition={{
-              duration: Math.random() * 5 + 3,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
+        {[...Array(30)].map((_, i) => (
+          <div key={i} className="particle" />
         ))}
       </div>
-        <Contact />
 
+      <Contact />
     </div>
   );
 };

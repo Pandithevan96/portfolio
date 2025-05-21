@@ -4,15 +4,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-"scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "lint": "eslint .",
-  "preview": "vite preview",
-  "predeploy": "npm run build",
-"deploy": "gh-pages -d dist -b gh-pages"
-
-},
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -b gh-pages"
+  },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.14.0",
@@ -22,6 +21,7 @@
     "@tailwindcss/vite": "^4.1.6",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^12.11.4",
+    "gsap": "^3.13.0",
     "lucide-react": "^0.510.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

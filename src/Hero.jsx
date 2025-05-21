@@ -3,7 +3,7 @@ import {
     useScroll,
     useTransform
 } from "framer-motion";
-import React from "react";
+import React, { useState,useEffect } from "react";
 import {
   Drawer,
   Box,
@@ -34,7 +34,46 @@ import {
   Public,
 } from "@mui/icons-material";
 import BlobAnimation from './BlobAnimation';
+
 const Hero = () => {
+ const text = "FullStack Developer";
+  const [displayedText, setDisplayedText] = useState("");
+  const [i, setI] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [speed] = useState(100); // typing speed in ms
+
+  useEffect(() => {
+    let timer;
+
+    if (!isDeleting) {
+      // Typing phase
+      if (i < text.length) {
+        timer = setTimeout(() => {
+          setDisplayedText(prev => prev + text.charAt(i));
+          setI(i + 1);
+        }, speed);
+      } else {
+        // Switch to deleting after pause
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, 2000); // pause at full text
+      }
+    } else {
+      // Deleting phase
+      if (displayedText.length > 0) {
+        timer = setTimeout(() => {
+          setDisplayedText(prev => prev.slice(0, -1));
+        }, speed / 2); // faster deletion
+      } else {
+        // Switch back to typing
+        setIsDeleting(false);
+        setI(0);
+      }
+    }
+
+    return () => clearTimeout(timer);
+  }, [i, displayedText, isDeleting, speed, text]);
+
     const actions = [
         {
           icon: <WhatsApp />,
@@ -89,11 +128,23 @@ const Hero = () => {
                 </motion.h1>
                 
                 <motion.div
-                  className="typewriter text-2xl lg:text-4xl font-mono text-gray-300"
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 2, ease: "easeInOut" }}
+                  className="text-2xl lg:text-4xl font-mono text-gray-500 min-h-[2.5rem]"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.3 }}
                 >
-                  FullStack Developer
+                  {displayedText}
+                  <motion.span
+                    animate={{ opacity: [0, 1, 0] }}
+                    transition={{ 
+                      duration: 0.8,
+                      repeat: Infinity,
+                      repeatType: "loop"
+                    }}
+                    className="ml-1"
+                  >
+                    |
+                  </motion.span>
                 </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
